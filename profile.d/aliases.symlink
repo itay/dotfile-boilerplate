@@ -83,6 +83,32 @@ done
 # Make Grunt print stack traces by default
 command -v grunt > /dev/null && alias grunt="grunt --stack"
 
+# Itay's additions
+
+# Make shell tabs fast again
+alias fastlogin="sudo rm -rf /var/log/asl/*"
+
+# Open up p4v
+alias p4v="open ~/bin/p4v.app"
+
+# Recursive add
+alias p4_add="find . -type f -print | p4 -x - add"
+
+# Find something in p4
+alias p4_find="find . -type f -print0 | xargs -0 p4 fstat > /dev/null"
+
+# Delete all pyc files from p4
+alias p4_pyc="find . -name '*.pyc' -print | p4 -x - delete"
+
+# Delete all pyc files from filesystem
+alias delete_pyc="find . -name '*.pyc' -print -delete"
+
+# Changelists of a particular file
+alias p4vh=p4v_history
+
+# "Git blame" of a file in p4v
+alias p4vt=p4v_timelapse
+
 if [[ $(uname -s) == "Darwin" ]]; then
     source ~/.profile.osx.d/aliases
 elif [[ $(uname -s) == "Linux" ]]; then

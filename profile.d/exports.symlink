@@ -32,3 +32,26 @@ if [[ $(uname -s) == "Darwin" ]]; then
 elif [[ $(uname -s) == "Linux" ]]; then
     source ~/.profile.linux.d/exports
 fi
+
+# Itay's additions
+
+export EDITOR="subl -w"
+
+export P4USER="ineeman"
+export P4PORT="perforce.splunk.com:1666"
+export P4EDITOR="subl -w"
+export P4CLIENT="Itay.Octavian"
+export P4DIFF=/usr/local/bin/ksdiff
+export P4MERGE=/usr/local/bin/ksdiff
+
+export SPLUNK_HOME=/Users/ineeman/opt/splunk/dash
+export SPLUNK_SOURCE=/Users/ineeman/work/splunk/splunk/dash
+
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/work
+
+# source /usr/local/bin/virtualenvwrapper.sh
+# source ~/.nvm/nvm.sh
+
+alias p4vh=p4v_history
+alias p4vt=p4v_timelapse
