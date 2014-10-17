@@ -70,3 +70,6 @@
         prompt = false
 [diff]
         tool = Kaleidoscope
+[user]
+	name = Itay Neeman
+	email = itay@neeman.net
