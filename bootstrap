@@ -80,7 +80,7 @@ check_shell () {
     if ${NEW_SETUP:-false}; then
         framework_check
     else
-	install_sublime_settings
+        install_custom_settings
         install_dotfiles
     fi
 }
@@ -303,6 +303,15 @@ install_sublime_settings () {
     link_files "$DOTFILES_ROOT/sublime/User" "$HOME/Library/Application Support/Sublime Text 2/Packages"
 }
 
+install_bin_directory () {
+    link_files "$DOTFILES_ROOT/bin" "$HOME"
+}
+
+install_custom_settings () {
+    install_bin_directory
+    install_sublime_settings
+}
+
 framework_check () {
     if [[ $SHELL == 'zsh' ]]; then
         oh_my_zsh_check
@@ -312,8 +321,8 @@ framework_check () {
 
     # Check for Janus install
     check_vimrc
-
-    install_sublime_settings
+    
+    install_custom_settings
     install_dotfiles
 }
 

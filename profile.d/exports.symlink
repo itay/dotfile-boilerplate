@@ -25,7 +25,7 @@ export MANPAGER="less -X"
 export GREP_OPTIONS="--color=auto"
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 if [[ $(uname -s) == "Darwin" ]]; then
     source ~/.profile.osx.d/exports
