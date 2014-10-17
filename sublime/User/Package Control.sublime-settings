@@ -1,0 +1,30 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"Alignment",
+		"Apiary.io Blueprint",
+		"BracketHighlighter",
+		"Clipboard History",
+		"Cscope",
+		"DocBlockr",
+		"Gist",
+		"HighlightDuplicates",
+		"JsFormat",
+		"Markdown Extended",
+		"Markdown Preview",
+		"MarkdownEditing",
+		"Mediawiker",
+		"Monokai Extended",
+		"Package Control",
+		"Pandoc",
+		"Perforce",
+		"Pretty JSON",
+		"rsub",
+		"SublimeREPL",
+		"Table Editor",
+		"Terminal",
+		"Themr",
+		"WordCount"
+	]
+}
