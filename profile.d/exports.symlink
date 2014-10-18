@@ -45,7 +45,7 @@ export P4DIFF=/usr/local/bin/ksdiff
 export P4MERGE=/usr/local/bin/ksdiff
 
 export SPLUNK_HOME=/Users/ineeman/opt/splunk/dash
-export SPLUNK_SOURCE=/Users/ineeman/work/splunk/splunk/dash
+export SPLUNK_SOURCE=/Users/ineeman/work/splunk/dash
 
 # export WORKON_HOME=$HOME/.virtualenvs
 # export PROJECT_HOME=$HOME/work
