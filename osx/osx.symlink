@@ -42,6 +42,8 @@ defaults write com.apple.menuextra.battery ShowTime -string "YES"
 
 # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+defaults write com.google.Chrome AppleShowScrollBars Always
+defaults write com.google.Chrome.canary AppleShowScrollBars Always
 # Possible values: `WhenScrolling`, `Automatic` and `Always`
 
 # Disable smooth scrolling
