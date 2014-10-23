@@ -218,6 +218,24 @@ p4v_timelapse() {
     ~/bin/p4v.app/Contents/MacOS/p4v -p $P4PORT -c $P4CLIENT -u $P4USER -cmd "annotate $1"
 }
 
+fc() {
+  # Usage: fc [depth >= 0, default 1]
+  # 1. List all files, not following symlinks.
+  #      (Add filters like -maxdepth 1 or -iname='*.jpg' here.)
+  # 2. Cut off filenames in bulk. Reverse and chop to the
+  #      first / (remove filename). Reverse back.
+  # 3. Cut everything after the specified depth, so that each line
+  #      contains only the relevant directory path
+  # 4. Cut off the preceeding '.' unless that's all there is.
+  # 5. Sort and group to unique lines with count.
+
+  find -P . -type f \
+      | rev | cut -d/ -f2- | rev \
+      | cut -d/ -f1-$((${1:-1}+1)) \
+      | cut -d/ -f2- \
+      | sort | uniq -c
+}
+
 if [[ $(uname -s) == "Darwin" ]]; then
     source ~/.profile.osx.d/functions
 elif [[ $(uname -s) == "Linux" ]]; then
