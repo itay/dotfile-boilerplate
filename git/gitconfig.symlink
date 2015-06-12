@@ -1,43 +1,54 @@
 [alias]
-	# View abbreviated SHA, description, and history graph of the latest 20 commits
-	l = log --pretty=oneline -n 20 --graph --abbrev-commit
-	# View the current working tree status using the short format
-	s = status -s
-	# Show the diff between the latest commit and the current state
-	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
-	# `git di $number` shows the diff between the state `$number` revisions ago and the current state
-	di = !"d() { git diff --patch-with-stat HEAD~$1; }; git diff-index --quiet HEAD -- || clear; d"
-	# Pull in remote changes for the current repository and all its submodules
-	p = !"git pull; git submodule foreach git pull origin master"
-	# Clone a repository including all submodules
-	c = clone --recursive
-	# Commit all changes
-	ca = !git add -A && git commit -av
-	# Switch to a branch, creating it if necessary
-	go = checkout -B
-	# Show verbose output about tags, branches or remotes
-	tags = tag -l
-	branches = branch -a
-	remotes = remote -v
-	# Credit an author on the latest commit
-	credit = "!f() { git commit --amend --author \"$1 <$2>\" -C HEAD; }; f"
-	# Interactive rebase with the given number of latest commits
-	reb = "!r() { git rebase -i HEAD~$1; }; r"
-	lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-	lg = !"git lg1"
+    # Get the current branch name (not so useful in itself, but used in
+    # other aliases)
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+    # Push the current branch to the remote "origin", and set it to track
+    # the upstream branch
+    publish = "!f() { git push -u origin ${1-$(git branch-name)}; }; f"
+    # Delete the remote version of the current branch
+    unpublish = "!f() { git push origin --delete ${1-$(git branch-name)}; }; f"
+
+    # Unstage any files that have been added to the staging area
+    unstage = reset HEAD
+    unadd = reset HEAD
+
+    # Checkout our version of a file and add it
+    ours = "!f() { git checkout --ours $@; }; f"
+    # Checkout their version of a file and add it
+    theirs = "!f() { git checkout --theirs $@; }; f"
+
+    # Show commit log as a graph
+    graphlog = log --pretty=oneline -n 500 --graph --abbrev-commit
+
+    # Check to see how to commits are related.
+    is-ancestor = "!f() { \
+        if [ $# -ne 2 ]; then \
+            echo \"usage: git is-ancestor <REV1> <REV2>\n\"; \
+            exit 2; \
+        fi; \
+        if $( git merge-base --is-ancestor $1 $2 ); then \
+            echo \"$1 is an ancestor of $2\"; \
+            exit 0; \
+        elif $( git merge-base --is-ancestor $2 $1 ); then \
+            echo \"$2 is an ancestor of $1\"; \
+            exit 0; \
+        else \
+            echo \"$1 and $2 are not related\"; \
+            exit 1; \
+        fi \
+    }; \
+    f"
+	oldest-ancestor = !zsh -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
+	conflicts = !git ls-files -u | cut -f 2 | sort -u
 
 [apply]
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
 
 [core]
-	# Use custom `.gitignore` and `.gitattributes`
-	excludesfile = ~/.gitignore
-	attributesfile = ~/.gitattributes
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
 	whitespace = space-before-tab,indent-with-non-tab,trailing-space
-
+    abbrev = 12
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
 	ui = auto
@@ -59,26 +70,31 @@
 	log = true
 
 [push]
-	default = matching
+	default = simple
 [mergetool "Kaleidoscope"]
-        cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-        trustexitcode = true
+    cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+    trustexitcode = true
 [merge]
-        tool = Kaleidoscope
+    log = true
+    tool = Kaleidoscope
 [difftool "Kaleidoscope"]
-        cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+    cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
 [difftool]
-        prompt = false
+    prompt = false
 [mergetool]
-        prompt = false
+    prompt = false
 [diff]
-        tool = Kaleidoscope
+    tool = Kaleidoscope
 [user]
 	name = Itay Neeman
-	email = itay@neeman.net
+	email = ineeman@splunk.com
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[credential]
+	helper = osxkeychain
+[http]
+	sslVerify = true

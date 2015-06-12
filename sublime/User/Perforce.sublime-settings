@@ -1,0 +1,4 @@
+{
+    "perforce_warnings_enabled": true, // will output messages when warnings happen
+    "perforce_log_warnings_to_status": true // used to redirect logs to the status bar instead. The standard output is too big for the line (can be multi-line with the raw output of p4)
+}

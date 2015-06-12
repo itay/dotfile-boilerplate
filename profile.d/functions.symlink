@@ -68,11 +68,11 @@ function fs() {
 
 # Use Git’s colored diff when available
 hash git &>/dev/null
-if [ $? -eq 0 ]; then
-    function diff() {
-        git diff --no-index --color-words "$@"
-    }
-fi
+#if [ $? -eq 0 ]; then
+#    function diff() {
+#        git diff --no-index --color-words "$@"
+#    }
+#fi
 
 # Create a data URL from a file
 function dataurl() {
@@ -234,6 +234,10 @@ fc() {
       | cut -d/ -f1-$((${1:-1}+1)) \
       | cut -d/ -f2- \
       | sort | uniq -c
+}
+
+function git-find-merge() {
+  git rev-list $1..$2 --ancestry-path | grep -f <(git rev-list $1..$2 --first-parent) | tail -1
 }
 
 if [[ $(uname -s) == "Darwin" ]]; then

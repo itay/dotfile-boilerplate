@@ -26,6 +26,8 @@ plugins=(osx git node npm brew zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 #~/OH-MY-ZSH~#
 
+export NVM_DIR="/Users/ineeman/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Load ~/.exports, ~/.aliases, ~/.functions, ~/.fun, and ~/.extra
 for file in ~/.{exports,aliases,functions,fun,extra}; do

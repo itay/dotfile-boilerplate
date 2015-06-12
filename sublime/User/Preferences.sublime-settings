@@ -15,12 +15,17 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"Theme - Spacegray",
 		"HighlightDuplicates",
 		"MarkdownEditing",
 		"rsub",
 		"Vintage",
 		"sublime-github",
+		"Perforce",
 		"Terminal",
+		"Oceanic Next Color Scheme",
+		"Monokai Extended",
+		"SublimeGit",
 		"SetDjangoSyntax"
 	],
 	"rulers":
@@ -31,6 +36,7 @@
 	],
 	"scroll_past_end": true,
 	"tab_size": 4,
+	"theme": "Default.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"trim_automatic_white_space": false,
 	"trim_trailing_white_space_on_save": false

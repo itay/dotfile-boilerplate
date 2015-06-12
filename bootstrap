@@ -77,6 +77,8 @@ check_shell () {
         fi
     fi
 
+    prompt_shell
+
     if ${NEW_SETUP:-false}; then
         framework_check
     else
@@ -308,8 +310,9 @@ install_bin_directory () {
 }
 
 install_custom_settings () {
-    install_bin_directory
-    install_sublime_settings
+    #install_bin_directory
+    #install_sublime_settings
+    echo "SKIP"
 }
 
 framework_check () {
