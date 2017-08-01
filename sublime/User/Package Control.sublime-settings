@@ -1,5 +1,6 @@
 {
 	"auto_upgrade_last_run": null,
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
@@ -23,11 +24,13 @@
 		"Mediawiker",
 		"Monokai Extended",
 		"Oceanic Next Color Scheme",
+		"Open Search in a New Tab",
 		"Package Control",
 		"Pandoc",
 		"Perforce",
 		"Pretty JSON",
 		"rsub",
+		"Search in Project",
 		"SublimeGit",
 		"SublimeREPL",
 		"Table Editor",

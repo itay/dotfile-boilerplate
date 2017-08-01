@@ -40,6 +40,7 @@
     f"
 	oldest-ancestor = !zsh -c 'diff --old-line-format= --new-line-format= <(git rev-list --first-parent \"${1:-master}\") <(git rev-list --first-parent \"${2:-HEAD}\") | head -1' -
 	conflicts = !git ls-files -u | cut -f 2 | sort -u
+    change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ $`echo $VAR` = \\\"$OLD\\\" ]]; then export $VAR=\\\"$NEW\\\"; fi\" $@; }; f "
 
 [apply]
 	# Detect whitespace errors when applying a patch
@@ -49,6 +50,7 @@
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
 	whitespace = space-before-tab,indent-with-non-tab,trailing-space
     abbrev = 12
+	excludesfile = ~/.gitignore
 [color]
 	# Use colors in Git commands that are capable of colored output when outputting to the terminal
 	ui = auto
@@ -98,3 +100,5 @@
 	helper = osxkeychain
 [http]
 	sslVerify = true
+[rerere]
+	enabled = true

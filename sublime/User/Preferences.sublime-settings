@@ -1,6 +1,6 @@
 {
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
@@ -15,18 +15,17 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"Theme - Spacegray",
 		"HighlightDuplicates",
 		"MarkdownEditing",
-		"rsub",
-		"Vintage",
-		"sublime-github",
-		"Perforce",
-		"Terminal",
-		"Oceanic Next Color Scheme",
 		"Monokai Extended",
-		"SublimeGit",
-		"SetDjangoSyntax"
+		"Oceanic Next Color Scheme",
+		"Perforce",
+		"rsub",
+		"SetDjangoSyntax",
+		"sublime-github",
+		"Terminal",
+		"Theme - Spacegray",
+		"Vintage"
 	],
 	"rulers":
 	[

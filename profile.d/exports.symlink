@@ -44,8 +44,8 @@ export P4CLIENT="Itay.Octavian"
 export P4DIFF=/usr/local/bin/ksdiff
 export P4MERGE=/usr/local/bin/ksdiff
 
-export SPLUNK_HOME=/Users/ineeman/opt/splunk/dash
-export SPLUNK_SOURCE=/Users/ineeman/work/splunk/dash
+export SPLUNK_HOME=/Users/ineeman/opt/splunk/git/main
+export SPLUNK_SOURCE=/Users/ineeman/work/git/main
 
 export GOPATH=~/work/go
 
@@ -57,3 +57,8 @@ export GOPATH=~/work/go
 
 alias p4vh=p4v_history
 alias p4vt=p4v_timelapse
+
+# virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/tmp
+source /usr/local/bin/virtualenvwrapper.sh
