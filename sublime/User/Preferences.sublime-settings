@@ -1,6 +1,6 @@
 {
 	"bold_folder_labels": true,
-	"color_scheme": "Packages/Color Scheme - Default/Monokai Bright.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
 	"draw_white_space": "selection",
 	"ensure_newline_at_eof_on_save": true,
 	"folder_exclude_patterns":
@@ -15,7 +15,6 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"HighlightDuplicates",
 		"MarkdownEditing",
 		"Monokai Extended",
 		"Oceanic Next Color Scheme",

@@ -1,0 +1,49 @@
+#!/usr/bin/env python
+""" Print all of the clone-urls for a GitHub organization.
+It requires the pygithub3 module, which you can install like this::
+    $ sudo yum -y install python-virtualenv
+    $ mkdir scratch
+    $ cd scratch
+    $ virtualenv my-virtualenv
+    $ source my-virtualenv/bin/activate
+    $ pip install pygithub3
+Usage example::
+    $ python list-all-repos.py
+Advanced usage.  This will actually clone all the repos for a
+GitHub organization or user::
+    $ for url in $(python list-all-repos.py); do git clone $url; done
+"""
+
+import pygithub3
+import sys
+
+gh = None
+
+def gather_members(organization, no_forks=True):
+    members = gh.orgs.members.list(organization).all()
+    for member in members:
+        yield member.login
+
+
+if __name__ == '__main__':
+    gh = pygithub3.Github(token='d17cc3cad78076deec924329218bb912e67eed1d')
+
+    print "--- splunk"
+    members = gather_members("splunk")
+    for login in members:
+        print login
+    print "--- polaris"
+    members = gather_members("Polarishq")
+    for login in members:
+        print login
+    print "--- splunkcloud"
+    members = gather_members("SplunkCloud")
+    for login in members:
+        print login
+    print "--- splunkstorm"
+    members = gather_members("SplunkStorm")
+    for login in members:
+        print login
+
+# andrew: d17cc3cad78076deec924329218bb912e67eed1d
+# itay: 251be97d5f62ce71e02e8d1a5c0b6b44854494d6

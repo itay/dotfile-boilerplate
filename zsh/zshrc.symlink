@@ -37,7 +37,7 @@ unset file
 
 source $HOME/.cargo/env
 
-nvm use 4.0
+nvm use 8.4.0
 eval "$(direnv hook zsh)"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.

@@ -18076,3 +18076,21 @@ Gocode pkg: "github.com/itay/simplekv"
 Gocode env: gocode.margoEnv{LibPath:"/usr/local/Cellar/go/1.6/libexec/pkg/darwin_amd64:/Users/ineeman/work/go/pkg/darwin_amd64", GOOS:"darwin", GOARCH:"amd64", Compiler:"gc", GOROOT:"/usr/local/Cellar/go/1.6/libexec", GOPATH:"/Users/ineeman/work/go", InstallSuffix:""}
 Gocode pkg: "gitlab.org/itay1/termfront"
 Gocode env: gocode.margoEnv{LibPath:"/usr/local/Cellar/go/1.7.4_2/libexec/pkg/darwin_amd64:/Users/ineeman/work/go/pkg/darwin_amd64", GOOS:"darwin", GOARCH:"amd64", Compiler:"gc", GOROOT:"/usr/local/Cellar/go/1.7.4_2/libexec", GOPATH:"/Users/ineeman/work/go", InstallSuffix:""}
+Gocode pkg: "github.com/markbates/goth/examples"
+Gocode env: gocode.margoEnv{LibPath:"/usr/local/Cellar/go/1.8.1/libexec/pkg/darwin_amd64:/Users/ineeman/work/go/pkg/darwin_amd64", GOOS:"darwin", GOARCH:"amd64", Compiler:"gc", GOROOT:"/usr/local/Cellar/go/1.8.1/libexec", GOPATH:"/Users/ineeman/work/go", InstallSuffix:""}
+Gocode pkg: "github.com/markbates/goth/gothic"
+Gocode pkg: "github.com/markbates/goth/examples"
+Gocode pkg: "github.com/markbates/goth/gothic"
+Gocode pkg: "github.com/markbates/goth/examples"
+Gocode pkg: "github.com/markbates/goth/gothic"
+Gocode pkg: "github.com/markbates/goth/examples"
+Gocode pkg: "github.com/markbates/goth/gothic"
+Gocode pkg: "github.com/markbates/goth/examples"
+Gocode pkg: "github.com/markbates/goth/gothic"
+Gocode pkg: "github.com/markbates/goth/examples"
+Gocode pkg: "gitlab.org/itay1/termfront"
+Gocode pkg: "github.com/google/go-github/github"
+Gocode env: gocode.margoEnv{LibPath:"/usr/local/Cellar/go/1.8.3/libexec/pkg/darwin_amd64:/Users/ineeman/work/go/pkg/darwin_amd64", GOOS:"darwin", GOARCH:"amd64", Compiler:"gc", GOROOT:"/usr/local/Cellar/go/1.8.3/libexec", GOPATH:"/Users/ineeman/work/go", InstallSuffix:""}
+Gocode pkg: "github.com/bradleyfalzon/ghinstallation"
+Gocode pkg: "github.com/markbates/goth/gothic"
+Gocode env: gocode.margoEnv{LibPath:"/usr/local/Cellar/go/1.8.3/libexec/pkg/darwin_amd64:/Users/ineeman/work/go/pkg/darwin_amd64", GOOS:"darwin", GOARCH:"amd64", Compiler:"gc", GOROOT:"/usr/local/Cellar/go/1.8.3/libexec", GOPATH:"/Users/ineeman/work/go", InstallSuffix:""}
