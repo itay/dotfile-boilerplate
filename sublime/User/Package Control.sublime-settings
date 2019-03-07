@@ -6,7 +6,6 @@
 	],
 	"installed_packages":
 	[
-		"Alignment",
 		"Apiary.io Blueprint",
 		"BracketHighlighter",
 		"Clipboard History",
@@ -35,6 +34,7 @@
 		"Search in Project",
 		"SublimeGit",
 		"SublimeREPL",
+		"Sync Settings",
 		"Table Editor",
 		"Terminal",
 		"Theme - Spacegray",
