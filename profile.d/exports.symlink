@@ -59,6 +59,6 @@ alias p4vh=p4v_history
 alias p4vt=p4v_timelapse
 
 # virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/tmp
-source /usr/local/bin/virtualenvwrapper.sh
+# export WORKON_HOME=$HOME/.virtualenvs
+# export PROJECT_HOME=$HOME/tmp
+# source /usr/local/bin/virtualenvwrapper.sh

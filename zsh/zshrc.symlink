@@ -5,10 +5,11 @@
 
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
+export ZSH_CUSTOM=$HOME/.dotfiles/zsh
 
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="bira"
+export ZSH_THEME="zeta"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
@@ -21,13 +22,13 @@ export DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx git node npm brew zsh-syntax-highlighting)
+plugins=(osx git node npm brew go)
 
 source $ZSH/oh-my-zsh.sh
 #~/OH-MY-ZSH~#
 
-export NVM_DIR="/Users/ineeman/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# export NVM_DIR="/Users/ineeman/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Load ~/.exports, ~/.aliases, ~/.functions, ~/.fun, and ~/.extra
 for file in ~/.{exports,aliases,functions,fun,extra}; do
@@ -35,10 +36,13 @@ for file in ~/.{exports,aliases,functions,fun,extra}; do
 done
 unset file
 
-source $HOME/.cargo/env
+#source $HOME/.cargo/env
 
-nvm use 8.4.0
-eval "$(direnv hook zsh)"
+# nvm use 8.4.0
+# eval "$(direnv hook zsh)"
+
+unsetopt correct_all
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+source ~/.rvm/scripts/rvm
 export PATH="$PATH:$HOME/.rvm/bin"
